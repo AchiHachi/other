@@ -1,0 +1,46 @@
+#include <iostream>
+constexpr auto M_PI = 3.14159265358979323846;
+using namespace std;
+
+class Circle {
+public:
+	double radius;
+
+	Circle() { 
+		 
+	}
+
+	Circle(double radius) {
+		this->radius = radius;
+	}
+
+	double getArea() {
+		return M_PI * this->radius * this->radius;
+	}
+
+};
+
+
+bool operator == (Circle c1, Circle c2)
+{
+	return c1.radius == c2.radius;
+}
+
+bool operator != (Circle c1, Circle c2)
+{
+	return c1.radius != c2.radius;
+}
+
+int main() {
+
+	Circle c1(7.3435);
+	Circle c2(3.545232);
+
+	bool b1 = c1 == c2;
+	bool b2 = c1 != c2;
+
+	cout << b1 << endl;
+	cout << b2 << endl;
+
+	return 0;
+}
